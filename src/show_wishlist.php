@@ -2,6 +2,21 @@
 session_start();
 include('header.php');
 include('config.php');
+if (!isset($_SESSION['wishlist'])) {
+    $_SESSION['wishlist'] = [];
+    $_SESSION['sync_wishlist'] = false;
+}
+if (isset($_COOKIE['user']) && !$_SESSION['sync_wishlist']) {
+    $_SESSION['sync_wishlist'] = true;
+    // then print the databse cart item
+    $id = $_COOKIE['user'];
+    $sql = "SELECT * FROM `wishlist` WHERE `user_id` = '$id'";
+    $result = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $found = false;
+        $_SESSION['wishlist'][$row['product_id']] = 1;
+    }
+}
 echo "<h1 class = 'text-center'>My Wishlist</h1>";
 if (isset($_SESSION['wishlist'])) {
     // get id from session
@@ -40,7 +55,6 @@ if (isset($_SESSION['wishlist'])) {
         }
     }
 }
-// show all products here
 include('footer.php');
 ?>
 <script src="./JS/main.js"></script>

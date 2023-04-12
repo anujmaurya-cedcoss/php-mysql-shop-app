@@ -152,7 +152,7 @@ function decrement(id) {
         dataType: 'text',
         success: function (res) {
             console.log(res);
-            // window.location.href = "./show_cart.php";
+            window.location.href = "./show_cart.php";
         }
     })
 }
@@ -206,7 +206,7 @@ $(document).on('click', '.sign-out-btn', function() {
         url : "../signout.php",
         success : function(res) {
             console.log(res);
-            // window.location.href = '../index.php';
+            window.location.href = '../index.php';
         }
     })
 })
