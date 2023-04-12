@@ -14,6 +14,7 @@
     <script src="./JS/main.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <!-- Jumbotron -->
@@ -33,28 +34,35 @@
                         <div class="d-flex float-end">
                             <!-- sign up button button -->
                             <a href="./signup.php"
-                                class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center sign-in-btn"> <i
+                                class="me-1 border rounded py-1 px-3 nav-link  align-items-center sign-in-btn"> <i
                                     class="fas fa-user-alt m-1 me-md-2"></i>
                                 <p class="d-none d-md-block mb-0 ">Sign in</p>
                             </a>
                             <!-- log in button button -->
                             <a href="./login.php"
-                                class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center log-in-btn"> <i
+                                class="me-1 border rounded py-1 px-3 nav-link  align-items-center log-in-btn"> <i
                                     class="fas fa-user-alt m-1 me-md-2"></i>
                                 <p class="d-none d-md-block mb-0 ">Log in</p>
                             </a>
 
                             <!-- wish list button -->
                             <a href="./show_wishlist.php"
-                                class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center"
-                                > <i class="fas fa-heart m-1 me-md-2"></i>
+                                class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center"> <i
+                                    class="fas fa-heart m-1 me-md-2"></i>
                                 <p class="d-none d-md-block mb-0">Wishlist</p>
                             </a>
                             <!-- my cart button -->
                             <a href="./show_cart.php"
-                                class="border rounded py-1 px-3 nav-link d-flex align-items-center" > <i
+                                class="border rounded py-1 px-3 nav-link d-flex align-items-center"> <i
                                     class="fas fa-shopping-cart m-1 me-md-2"></i>
                                 <p class="d-none d-md-block mb-0">My cart</p>
+                            </a>
+
+                            <!-- sign out button -->
+                            <a 
+                                class="me-1 border rounded py-1 ml-3 px-3 nav-link  align-items-center sign-out-btn" style="display:none"; > <i
+                                    class="fas fa-user-alt m-1 me-md-2"></i>
+                                <p class="d-none d-md-block mb-0 ">Sign Out</p>
                             </a>
                         </div>
                     </div>
@@ -86,6 +94,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-<script src="./get_data.js"></script>
 
 </html>

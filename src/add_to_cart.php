@@ -12,14 +12,14 @@ if (isset($_COOKIE['user'])) {
 
 $found = false;
 
-foreach ($_SESSION['cart'] as $key => $arr) {
+foreach ($_SESSION['cart'] as $k => $arr) {
     foreach ($arr as $key => $value) {
-        if($key == $_POST['id']) {
+        if($key == $_POST['id'] && $value > 0) {
             $found = true;
         }
     }
 }
-$arr = Array ($_POST['id'] => 1);
+$arr = Array ($_POST['id'] => 1);  // setting quantity 1 at that id
 if(!$found) {
     array_push($_SESSION['cart'], $arr);
 }

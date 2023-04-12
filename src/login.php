@@ -28,11 +28,12 @@
                 <input type="password" id="form2Example2" class="form-control login-pass" />
                 <label class="form-label" for="form2Example2">Password</label>
             </div>
-
+            
             <!-- 2 column grid layout for inline styling -->
             <div class="row mb-4">
                 <button type="button" class="login-btn btn btn-primary btn-block mb-4">Log in</button>
-        </form>
+            </form>
+            <div class = "login-error"></div>
         <!-- display the results here -->
     </div>
     </div>

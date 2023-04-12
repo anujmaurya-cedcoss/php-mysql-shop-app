@@ -5,7 +5,7 @@ include_once('config.php');
 $res = "";
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
-    $sql = "SELECT * FROM products";
+    $sql = "SELECT * FROM products WHERE `prod_id` = '$id'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     $res.="<div class=\"row\">
@@ -19,8 +19,8 @@ if (isset($_POST['id'])) {
             
             <p class=\"card-text\">$ $row[price]</p>
             <div class=\"card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto\">
-            <a href=\"#!\" class=\"btn btn-primary shadow-0 me-1 add-to-cart\" id=\"$row[prod_id]\">Add to cart</a>
-            <a href=\"#!\" class=\"btn btn-light border px-2 pt-2 icon-hover add-to-wishlist\" id=\"$row[prod_id]\" ><i
+            <a  class=\"btn btn-primary shadow-0 me-1 add-to-cart\" id=\"$row[prod_id]\">Add to cart</a>
+            <a  class=\"btn btn-light border px-2 pt-2 icon-hover add-to-wishlist\" id=\"$row[prod_id]\" ><i
             class=\"fas fa-heart fa-lg text-secondary px-1\"></i></a>
             </div>
             </div>
