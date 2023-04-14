@@ -62,6 +62,7 @@ $(document).ready(function () {
         $('.log-in-btn').hide();
         $(".sign-in-btn").hide();
         $(".sign-out-btn").show();
+        $(".my-orders-btn").show();
     }
 
     // add to wishlist 
@@ -195,16 +196,19 @@ function checkoutCart() {
             if (res == 'false') {
                 window.location.href = '../login.php';
             }
+            if(res == 'true'){
+                window.location.href = '../checkout.php';
+            }
         }
     })
 }
 
 // action on sign-out button
-$(document).on('click', '.sign-out-btn', function() {
+$(document).on('click', '.sign-out-btn', function () {
     $.ajax({
-        type : "POST",
-        url : "../signout.php",
-        success : function(res) {
+        type: "POST",
+        url: "../signout.php",
+        success: function (res) {
             console.log(res);
             window.location.href = '../index.php';
         }

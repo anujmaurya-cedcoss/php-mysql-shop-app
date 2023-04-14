@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 $_SESSION['current_prod'] = "";
 include_once('config.php');

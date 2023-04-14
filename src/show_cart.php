@@ -7,7 +7,8 @@ if (!isset($_SESSION['cart'])) {
     $_SESSION['sync_cart'] = false;
 }
 echo "<h1 class = 'text-center'>My cart</h1>";
-$total = 0; // total cost of cart items 
+// total cost of cart items
+$total = 0;
 if (isset($_COOKIE['user']) && !$_SESSION['sync_cart']) {
     $_SESSION['sync_cart'] = true;
     // then print the databse cart item
@@ -68,7 +69,7 @@ if (isset($_SESSION['cart'])) {
                                 <a  class=\"m-3 btn btn-primary shadow-0 me-1 increment-quantity\" id=\"$row[prod_id]\" onclick = 'increment($row[prod_id])'>+</a>
                                     <a class=\"m-3 btn btn-danger shadow-0 me-1 delete-from-cart\" id=\"$row[prod_id]\" onclick = 'del($row[prod_id])'>Delete</a>
                                     </div>
-                                    <p style = 'color : red' class = 'text-center'>$str</p>      
+                                    <p style = 'color : red' class = 'text-center'>$str</p>
                             </div>
                         </div>
                     </div>";
@@ -88,5 +89,5 @@ include('footer.php');
 // session_destroy();
 ?>
 <script type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script src="./JS/main.js"></script>

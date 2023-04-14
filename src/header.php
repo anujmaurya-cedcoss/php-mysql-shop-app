@@ -24,7 +24,7 @@
                     <!-- Left elements -->
                     <div class="col-lg-5 col-sm-4 col-4">
                         <a href="./index.php" class="float-start">
-                            <img src="./images/fake_logo.png" height="35" />
+                            <img src="./images/fake_logo.png" alt="logo" height="35" />
                         </a>
                     </div>
                     <!-- Left elements -->
@@ -58,10 +58,16 @@
                                 <p class="d-none d-md-block mb-0">My cart</p>
                             </a>
 
+                            <!-- my Orders button -->
+                            <a href="./my_orders.php"
+                                class="border rounded py-1 px-3 nav-link align-items-center my-orders-btn"
+                                style="display:none" ;> <i class="fas fa-shopping-cart m-1 me-md-2"></i>
+                                <p class="d-none d-md-block mb-0">My Orders</p>
+                            </a>
+
                             <!-- sign out button -->
-                            <a 
-                                class="me-1 border rounded py-1 ml-3 px-3 nav-link  align-items-center sign-out-btn" style="display:none"; > <i
-                                    class="fas fa-user-alt m-1 me-md-2"></i>
+                            <a class="me-1 border rounded py-1 ml-3 px-3 nav-link  align-items-center sign-out-btn"
+                                style="display:none" ;> <i class="fas fa-user-alt m-1 me-md-2"></i>
                                 <p class="d-none d-md-block mb-0 ">Sign Out</p>
                             </a>
                         </div>

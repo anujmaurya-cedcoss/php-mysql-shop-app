@@ -45,11 +45,17 @@ switch ($method) {
     case 'checkout':
         if (isset($_COOKIE['user'])) {
             // insert everything in db, and then unset session['cart']
+            $_SESSION['checkout'] = [];
             foreach ($_SESSION['cart'] as $idx => $arr) {
                 foreach ($arr as $id => $quant) {
                     $sql = "INSERT INTO `orders`
                     (`prod_id`, `quantity`,`user_id`) 
                     VALUES ('$id','$quant','$_COOKIE[user]')";
+                    // inserting everthing inside the session['checkout'] to process in checkout page
+                    $arr = array('product_id' => $id, 'quantity' => $quant);
+                    array_push($_SESSION['checkout'], $arr);
+                    $result = mysqli_query($conn, $sql);
+                    $sql = "DELETE FROM `cart` WHERE `product_id` = $id AND `user_id` = $_COOKIE[user]";
                     $result = mysqli_query($conn, $sql);
                     echo "true";
                 }
